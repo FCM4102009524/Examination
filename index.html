@@ -1,0 +1,137 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream House</title>
+
+    <!-- FIXED: A-Frame CDN -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .floor-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .floor-button {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            font-weight: bold;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .floor-label {
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<a-scene>
+
+    <!-- Assets -->
+    <a-assets>
+        <img src="img/mountains-1985027.jpg" id="pic">
+
+        <a-asset-item id="model" src="model3/scene.gltf"></a-asset-item>
+        <a-asset-item id="book" src="books/scene.gltf"></a-asset-item>
+        <a-asset-item id="cup" src="coffee_cups/scene.gltf"></a-asset-item>
+        <a-asset-item id="samsung_remote" src="samsung_remote/scene.gltf"></a-asset-item>
+        <a-asset-item id="ac" src="airConditon_remote/scene.gltf"></a-asset-item>
+        <a-asset-item id="teapot" src="teapot/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <!-- Sky -->
+    <a-sky src="#pic"></a-sky>
+
+    <!-- Ground -->
+    <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#7c8c47"></a-plane>
+
+    <!-- Building -->
+    <a-entity gltf-model="#model"></a-entity>
+
+    <!-- Camera -->
+    <a-camera position="-5 3.6 18"></a-camera>
+
+    <!-- Objects -->
+    <a-entity gltf-model="#book" position="-8 3.6 -5.8" scale="0.1 0.1 0.1"></a-entity>
+
+    <a-entity gltf-model="#cup" position="-5 0.8 0.8" scale="0.1 0.1 0.1" rotation="0 90 0"></a-entity>
+
+    <a-entity gltf-model="#teapot" position="-5 0.8 1.3" scale="0.003 0.003 0.003"></a-entity>
+
+    <!-- FIXED -->
+    <a-entity gltf-model="#samsung_remote" position="-6 3.6 5.5" scale="0.1 0.1 0.1"></a-entity>
+
+    <a-entity gltf-model="#ac" position="-4 3.8 4.9" scale="0.002 0.002 0.002"></a-entity>
+
+</a-scene>
+
+<!-- Floor Controls -->
+<div class="floor-controls">
+    <button class="floor-button" id="upBtn">▲</button>
+    <div class="floor-label">Floor <span id="currentFloor">1</span></div>
+    <button class="floor-button" id="downBtn">▼</button>
+</div>
+
+<script>
+    let currentFloor = 1;
+    const totalFloors = 3;
+    const floorHeight = 4;
+    const baseHeight = 3.6;
+
+    const upBtn = document.getElementById('upBtn');
+    const downBtn = document.getElementById('downBtn');
+    const floorLabel = document.getElementById('currentFloor');
+    const camera = document.querySelector('a-camera');
+
+    function moveToFloor(floor) {
+        if (floor < 1 || floor > totalFloors) return;
+
+        currentFloor = floor;
+        const newHeight = baseHeight + (floor - 1) * floorHeight;
+
+        camera.setAttribute('position', {
+            x: camera.getAttribute('position').x,
+            y: newHeight,
+            z: camera.getAttribute('position').z
+        });
+
+        floorLabel.textContent = floor;
+
+        upBtn.disabled = currentFloor >= totalFloors;
+        downBtn.disabled = currentFloor <= 1;
+    }
+
+    upBtn.onclick = () => moveToFloor(currentFloor + 1);
+    downBtn.onclick = () => moveToFloor(currentFloor - 1);
+
+    downBtn.disabled = true;
+</script>
+
+</body>
+</html>
