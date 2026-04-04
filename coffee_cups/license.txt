@@ -1,0 +1,11 @@
+Model Information:
+* title:	Coffee cups
+* source:	https://sketchfab.com/3d-models/coffee-cups-3214eb7029bc4f3ebd17ade9039e7afb
+* author:	Wittybacon (https://sketchfab.com/wittybacon)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Coffee cups" (https://sketchfab.com/3d-models/coffee-cups-3214eb7029bc4f3ebd17ade9039e7afb) by Wittybacon (https://sketchfab.com/wittybacon) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

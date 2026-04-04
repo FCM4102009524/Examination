@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cloisonne tea pot
+* source:	https://sketchfab.com/3d-models/cloisonne-tea-pot-45ee52b34d314255a87af6f4d0cf7b27
+* author:	lv3628800 (https://sketchfab.com/lv3628800)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cloisonne tea pot" (https://sketchfab.com/3d-models/cloisonne-tea-pot-45ee52b34d314255a87af6f4d0cf7b27) by lv3628800 (https://sketchfab.com/lv3628800) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
