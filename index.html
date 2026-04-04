@@ -2,25 +2,22 @@
 <html>
   <head>
     <title>Examination Project</title>
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
         <a-asset-item id="house" src="model3/scene.gltf"></a-asset-item>
-        <a-asset-item id="book" src="books/scene.gltf"></a-asset-item>
-        <a-asset-item id="cup" src="coffee_cups/scene.gltf"></a-asset-item>
-        <a-asset-item id="samsung" src="samsung_remote/scene.gltf"></a-asset-item>
-        <a-asset-item id="ac" src="airConditon_remote/scene.gltf"></a-asset-item>
         <a-asset-item id="teapot" src="teapot/scene.gltf"></a-asset-item>
+        <a-asset-item id="cup" src="coffee_cups/scene.gltf"></a-asset-item>
       </a-assets>
 
-      <a-sky color="#ECECEC"></a-sky>
+      <a-sky color="#87CEEB"></a-sky>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
 
       <a-entity gltf-model="#house" position="0 0 -5"></a-entity>
-      <a-entity gltf-model="#book" position="-1 1 -3" scale="0.1 0.1 0.1"></a-entity>
-      <a-entity gltf-model="#cup" position="0 1 -3" scale="0.1 0.1 0.1"></a-entity>
-      <a-entity gltf-model="#teapot" position="1 1 -3" scale="0.05 0.05 0.05"></a-entity>
+      <a-entity gltf-model="#teapot" position="1 1.2 -3" scale="0.5 0.5 0.5"></a-entity>
+      <a-entity gltf-model="#cup" position="-1 1.2 -3" scale="0.1 0.1 0.1"></a-entity>
 
       <a-camera position="0 1.6 0"></a-camera>
     </a-scene>
